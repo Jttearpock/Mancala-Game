@@ -1,0 +1,15 @@
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.exe.config
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.exe
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.pdb
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csprojAssemblyReference.cache
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\App.g.cs
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\MainWindow.baml
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.g.resources
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.cache
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csproj.CoreCompileInputs.cache
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.exe
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.pdb
