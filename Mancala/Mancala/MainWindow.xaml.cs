@@ -35,12 +35,9 @@ namespace Mancala
         {
             for (int x = 0; x < 14; x++)
             {
-                // TODO Update the string to match correct naming Convention
-                string objectName = "Name" + x;
+                string objectName = "txtboxSlot" + x;
                 TextBox currentBox = FindName(objectName) as TextBox;
-
-                // TODO Make sure this part works
-                // The ToolTip is an Object not Text and I have no idea if either of these will work. Testing needed.
+              
                 currentBox.ToolTip = this.currentGame.ArrGameBoard[x].ToString();
             }
         }
@@ -51,9 +48,18 @@ namespace Mancala
         /// <param name="currentBox">The object that initiated the event.</param>
         public void TakeMove(TextBox currentBox)
         {
-            int count = int.Parse(currentBox.ToolTip.ToString());
-            string startPos = currentBox.Name.Substring(4, 1);
+            string startPos;
+            if (currentBox.Name.Length == 12)
+            {
+                startPos = currentBox.Name.Substring(10, 2);
+            }
+            else
+            {
+                startPos = currentBox.Name.Substring(10, 1);
+            }
+           
             int position = int.Parse(startPos);
+            int count = this.currentGame.ArrGameBoard[position];
             for (int x = count; x > 0; x--)
             {
                 position++;
@@ -75,6 +81,7 @@ namespace Mancala
                 this.currentGame.ArrGameBoard[position]++;
             }
 
+            this.currentGame.ArrGameBoard[int.Parse(startPos)] = 0;
             this.UpdateValues();
         }
 
@@ -109,6 +116,7 @@ namespace Mancala
             else
             {
                 this.currentGame.SetStartValues();
+                UpdateValues();
             }
         }
 
@@ -130,6 +138,11 @@ namespace Mancala
             {
                 this.currentGame.SetStartValues();
             }
+        }
+
+        private void PlayerTurn_DoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.TakeMove(sender as TextBox);
         }
     }
 }
