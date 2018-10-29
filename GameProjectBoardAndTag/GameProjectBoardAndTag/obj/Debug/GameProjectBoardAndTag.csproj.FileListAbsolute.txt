@@ -1,0 +1,14 @@
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\bin\Debug\GameProjectBoardAndTag.exe.config
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\bin\Debug\GameProjectBoardAndTag.exe
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\bin\Debug\GameProjectBoardAndTag.pdb
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\GameProjectBoardAndTag.csprojResolveAssemblyReference.cache
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\MainWindow.g.cs
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\App.g.cs
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\GameProjectBoardAndTag_MarkupCompile.cache
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\GameProjectBoardAndTag_MarkupCompile.lref
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\MainWindow.baml
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\GameProjectBoardAndTag.g.resources
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\GameProjectBoardAndTag.Properties.Resources.resources
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\GameProjectBoardAndTag.csproj.GenerateResource.Cache
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\GameProjectBoardAndTag.exe
+C:\Users\RPGrinders~\Documents\Visual Studio 2015\Projects\GameProjectBoardAndTag\GameProjectBoardAndTag\obj\Debug\GameProjectBoardAndTag.pdb
