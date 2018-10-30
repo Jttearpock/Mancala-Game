@@ -13,3 +13,17 @@ D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Ma
 D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csproj.CoreCompileInputs.cache
 D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.exe
 D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.pdb
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe.config
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.exe
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.pdb
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.pdb
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\App.g.cs
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.baml
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.g.resources
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache

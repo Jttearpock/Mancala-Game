@@ -37,7 +37,7 @@ namespace Mancala
             {
                 string objectName = "txtboxSlot" + x;
                 TextBox currentBox = FindName(objectName) as TextBox;
-              
+
                 currentBox.ToolTip = this.currentGame.ArrGameBoard[x].ToString();
             }
         }
@@ -57,7 +57,7 @@ namespace Mancala
             {
                 startPos = currentBox.Name.Substring(10, 1);
             }
-           
+
             int position = int.Parse(startPos);
             int count = this.currentGame.ArrGameBoard[position];
             for (int x = count; x > 0; x--)
@@ -66,8 +66,8 @@ namespace Mancala
                 if (position == 6 && this.currentGame.PlayerOneTurn == false)
                 {
                     position++;
-                }   
-                
+                }
+
                 if (position == 13 && this.currentGame.PlayerOneTurn == true)
                 {
                     position++;
@@ -92,7 +92,8 @@ namespace Mancala
         /// <param name="e">The event arguments for the event.</param> 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to quit?", "Confirm", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            if (MessageBox.Show("Are you sure you want to quit?", "Confirm", MessageBoxButton.OKCancel) ==
+                MessageBoxResult.OK)
             {
                 this.Close();
             }
@@ -129,7 +130,8 @@ namespace Mancala
         {
             if (this.currentGame.OnGoingGame == true)
             {
-                if (MessageBox.Show("Restart current puzzle?", "Confirm", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                if (MessageBox.Show("Restart current puzzle?", "Confirm", MessageBoxButton.OKCancel) ==
+                    MessageBoxResult.OK)
                 {
                     this.currentGame.SetStartValues();
                 }
@@ -144,5 +146,32 @@ namespace Mancala
         {
             this.TakeMove(sender as TextBox);
         }
+
+        private void aiCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("AI is enabled");
+
+        }
+
+        private void nameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void nameButton_Click(object sender, RoutedEventArgs e)
+        {
+            player1Lbl.Content = nameTextBox.Text;
+
+            if (aiCheckBox.IsChecked.Equals(true))
+            {
+                name2TextBox.IsEnabled = false;
+            }
+            else
+            {
+                player2Lbl.Content = name2TextBox.Text;
+            }
+        }
     }
 }
+    
+
