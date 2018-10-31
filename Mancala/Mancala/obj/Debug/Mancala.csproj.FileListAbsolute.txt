@@ -41,3 +41,6 @@ H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWin
 H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.g.resources
 H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
 H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.exe.config
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.exe
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.pdb

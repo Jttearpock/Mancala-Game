@@ -45,6 +45,86 @@
             <TextBlock x:Name="txtBlkSlot9" HorizontalAlignment="Left" Margin="323,14,0,0" TextWrapping="Wrap" Text="9" VerticalAlignment="Top" Width="90" Height="92" Padding="0,12.5,0,0" FontSize="15" TextAlignment="Center" FontWeight="ExtraBold" AutomationProperties.Name="vis9" Grid.Column="2"/>
             <TextBlock x:Name="txtBlkSlot8" HorizontalAlignment="Left" Margin="423,14,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top" Width="92" Height="92" Padding="0,12.5,0,0" FontSize="15" TextAlignment="Center" FontWeight="ExtraBold" AutomationProperties.Name="vis8" Grid.Column="2"/>
             <TextBlock x:Name="txtBlkSlot7" HorizontalAlignment="Left" Margin="524,14,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top" Width="91" Height="92" Padding="0,12.5,0,0" FontSize="15" TextAlignment="Center" FontWeight="ExtraBold" AutomationProperties.Name="vis7" Grid.Column="2"/>
+            <Image x:Name="Image0_1" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="59,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image0_2" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="74,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image0_3" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="59,250,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image0_4" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="44,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image0_5" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="59,280,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image1_1" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="160,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image1_2" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="145,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image1_3" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="160,250,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image1_4" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="160,280,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image1_5" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="175,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image2_1" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="260,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image2_2" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="245,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image2_3" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="260,250,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image2_4" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="260,280,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image2_5" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="275,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image3_1" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="361,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image3_2" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="346,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image3_3" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="361,250,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image3_4" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="361,280,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image3_5" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="376,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image4_1" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="463,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image4_2" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="463,250,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image4_3" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="448,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image4_4" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="463,280,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image4_5" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="478,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image5_1" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="563,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image5_2" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="548,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image5_3" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="563,250,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image5_4" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="563,280,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image5_5" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="578,265,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image12_1" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="59,166,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image12_2" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="59,151,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image12_3" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="74,166,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image12_4" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="59,181,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image12_5" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="44,166,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image11_1" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="160,166,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image11_2" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="175,166,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image11_3" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="145,166,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image11_4" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="160,181,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
+            <Image x:Name="Image11_5" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="160,151,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+            </Image>
         </Grid>
         <CheckBox x:Name="aiCheckBox" Content="Check to play against AI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="406,61,0,0" FontWeight="Bold" Checked="aiCheckBox_Checked"/>
         <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="266,10,0,0" TextChanged="nameTextBox_TextChanged"/>
@@ -56,6 +136,46 @@
         <Label x:Name="Player_2" Content="Player 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,174,0,0" FontWeight="Bold"/>
         <TextBox x:Name="name2TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="266,50,0,0" TextChanged="nameTextBox_TextChanged"/>
         <Label x:Name="label_Copy" Content="Player 2 name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="168,50,0,0" FontWeight="Bold"/>
+        <Image x:Name="Image10_1" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="485,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image10_2" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="500,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image10_3" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="485,249,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image10_4" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="466,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image10_5" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="485,219,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image9_1" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="586,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image9_2" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="571,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image9_3" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="586,219,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image9_4" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="586,249,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image9_5" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="601,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image8_1" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="686,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image8_2" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="686,249,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image8_3" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="701,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image8_4" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="671,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image8_5" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="686,219,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image7_1" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="787,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image7_2" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="787,219,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image7_3" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="802,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image7_4" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="787,249,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
+        <Image x:Name="Image7_5" Grid.Column="0" HorizontalAlignment="Left" Height="15" Margin="772,234,0,0" VerticalAlignment="Top" Width="15" Source="bin/Debug/mancala_image.png">
+        </Image>
 
     </Grid>
 </Window>
