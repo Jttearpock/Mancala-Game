@@ -148,17 +148,19 @@ namespace Mancala
         }
 
         private void aiCheckBox_Checked(object sender, RoutedEventArgs e)
+        // checkbox for choosing to play against AI
         {
             MessageBox.Show("AI is enabled");
+            name2TextBox.Clear();
+            name2TextBox.IsEnabled = false;
+            player2Lbl.Content = "";
+
 
         }
 
-        private void nameTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         private void nameButton_Click(object sender, RoutedEventArgs e)
+        // Allow player(s) to enter their name(s) 
         {
             player1Lbl.Content = nameTextBox.Text;
 
@@ -170,6 +172,11 @@ namespace Mancala
             {
                 player2Lbl.Content = name2TextBox.Text;
             }
+        }
+
+        private void nameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
