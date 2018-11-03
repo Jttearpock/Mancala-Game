@@ -70,5 +70,17 @@ namespace MyNamespace
             this.PlayerOneTurn = true;
             this.OnGoingGame = true;           
         }
+
+        public void ChangePlayerTurn()
+        {
+            if (this.PlayerOneTurn == true)
+            {
+                this.PlayerOneTurn = false;
+            }
+            else
+            {
+                this.PlayerOneTurn = true;
+            }
+        }
     }
 }
