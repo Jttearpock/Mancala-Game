@@ -5,6 +5,8 @@
 //-----------------------------------------------------------------------
 
 
+using System.Windows.Media;
+
 namespace Mancala
 {
     using System.Windows;
@@ -66,6 +68,26 @@ namespace Mancala
                     position = 0;
                 }
 
+                if (position == 0 & count == 0)
+                {
+                    position = 0;
+                }
+
+                if (position == 1 & count == 0)
+                {
+                    position = 0;
+                }
+
+                if (position == 2 & count == 0)
+                {
+
+                }
+                if (position == 6 & count > 13)
+                {
+
+                        MessageBox.Show("Player 1 wins!");
+                }
+
                 this.currentGame.ArrGameBoard[position]++;
             }
 
@@ -75,7 +97,36 @@ namespace Mancala
             {
                 this.currentGame.ChangePlayerTurn();
             }
-            // TODO Add Method Here to Check if game is over, should run after every move        
+
+            
+        // TODO Add Method Here to Check if game is over, should run after every move                 
+            
+        }
+
+        /// <summary>
+        /// Method that checks if game is over
+        /// </summary>
+        /// <param name="currentBox">The object that initiated the event.</param>
+        public void WinGame(TextBox currentBox)
+        {
+            int sum = 0;
+            for (int x = 0; x <= 0; x++)
+            {
+                sum += this.currentGame.ArrGameBoard[0];
+                sum += this.currentGame.ArrGameBoard[1];
+                sum += this.currentGame.ArrGameBoard[2];
+                sum += this.currentGame.ArrGameBoard[3];
+                sum += this.currentGame.ArrGameBoard[4];
+                sum += this.currentGame.ArrGameBoard[5];
+
+            }
+
+            this.currentGame.ArrGameBoard[6] += sum;
+            if (currentGame.ArrGameBoard[6] > currentGame.ArrGameBoard[13])
+            {
+                MessageBox.Show("Player 1 wins!");
+            }
+           
         }
 
         /// <summary>
@@ -100,6 +151,7 @@ namespace Mancala
                 if (position >= 0 && position <= 5)
                 {
                     TakeMove(currentBox);
+
                 }
             }
             else if (this.currentGame.PlayerOneTurn == false)
