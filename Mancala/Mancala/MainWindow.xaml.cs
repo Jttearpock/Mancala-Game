@@ -79,7 +79,7 @@ namespace Mancala
 
 
             // TODO Method Call here, needs to run after every move    
-            // EndGame();
+             EndGame();
         }
 
         /// <summary>
@@ -87,50 +87,29 @@ namespace Mancala
         /// </summary>
         public void EndGame()
         {
-            //TODO Could do it like this with the loop
-            //int sum1 = 0         
-            //for (int x = 0; x < 6; x++)
-            //{
-            //    sum1 += this.currentGame.ArrGameBoard[x];
-            //}
-            //int sum2 = 0 
-            //for (int x = 7; x < 13; x++)
-            //{
-            //    sum2 += this.currentGame.ArrGameBoard[x];
-            //}
-
             // Sum Player 1's side of board 0-5
             int sum1 = 0;
-            for (int x = 0; x <= 0; x++)
+            for (int x = 0; x < 6; x++)
             {
-                // TODO Remove loop or change it to be x
-                // These 5 lines negate the purpose loop.
-                // Either remove the For and keep the 5 lines or change the For to loop through the positions
-                sum1 += this.currentGame.ArrGameBoard[0];
-                sum1 += this.currentGame.ArrGameBoard[1];
-                sum1 += this.currentGame.ArrGameBoard[2];
-                sum1 += this.currentGame.ArrGameBoard[3];
-                sum1 += this.currentGame.ArrGameBoard[4];
-                sum1 += this.currentGame.ArrGameBoard[5];
+                sum1 += this.currentGame.ArrGameBoard[x];
             }
 
             // Sum Player 2's side of board 7-12
             int sum2 = 0;
-            for (int x = 0; x <= 0; x++)
+            for (int x = 7; x < 13; x++)
             {
-                sum2 += this.currentGame.ArrGameBoard[7];
-                sum2 += this.currentGame.ArrGameBoard[8];
-                sum2 += this.currentGame.ArrGameBoard[9];
-                sum2 += this.currentGame.ArrGameBoard[10];
-                sum2 += this.currentGame.ArrGameBoard[11];
-                sum2 += this.currentGame.ArrGameBoard[12];
+                sum2 += this.currentGame.ArrGameBoard[x];
             }
 
-            // TODO Need If Statement Here to check if game is actually over
-            // If either sum = 0 then game is over
-            // Code Below this should ONLY run if the game is actually over
-            // Don't need an else statement, If over do this, otherwise do nothing. 
+            if (sum1.Equals(0))
+            {
+                MessageBox.Show("GAME OVER");
+            }
 
+            if (sum2.Equals(0))
+            {
+                MessageBox.Show("GAME OVER");
+            }
 
             this.currentGame.ArrGameBoard[6] += sum1;
             this.currentGame.ArrGameBoard[13] += sum2;
