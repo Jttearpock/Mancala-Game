@@ -71,3 +71,6 @@ D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Ma
 C:\Users\23211794\Documents\Mancala-Game-master-1\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe.config
 C:\Users\23211794\Documents\Mancala-Game-master-1\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.exe
 C:\Users\23211794\Documents\Mancala-Game-master-1\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.pdb
+H:\Visual C#\Part 2\Week 11\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe.config
+H:\Visual C#\Part 2\Week 11\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.exe
+H:\Visual C#\Part 2\Week 11\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.pdb
