@@ -372,6 +372,16 @@ namespace Mancala
                 TextBox currentBox = FindName(objectName) as TextBox;
 
                 currentBox.ToolTip = this.currentGame.ArrGameBoard[x].ToString();
+
+                int pieceCount;
+                pieceCount = this.currentGame.ArrGameBoard[x];
+
+                for (int count = 1; count <= pieceCount; count++)
+                {
+                    string imageName = "Image" + x + "_" + count;
+                    Image currentImage = FindName(imageName) as Image;
+                    currentImage.Visibility = Visibility.Visible;
+                }
             }
         }
 
