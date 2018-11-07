@@ -58,3 +58,14 @@ H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWi
 H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.g.resources
 H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
 H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.exe
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.pdb
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\App.g.cs
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\MainWindow.baml
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.g.resources
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
