@@ -195,15 +195,15 @@
 
 
         </Grid>
-        <CheckBox x:Name="aiCheckBox" Content="Check to play against AI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="406,50,0,0" FontWeight="Bold" Checked="aiCheckBox_Checked"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="266,10,0,0" TextChanged="nameTextBox_TextChanged"/>
+        <CheckBox x:Name="aiCheckBox" Content="Check to play against AI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="406,50,0,0" FontWeight="Bold" Checked="AICheckBox_Checked"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="266,10,0,0" TextChanged="NameTextBox_TextChanged"/>
         <Label x:Name="label" Content="Player 1 Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,10,0,0" FontWeight="Bold"/>
         <Label x:Name="player1Lbl" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,131,0,0"/>
-        <Button x:Name="nameButton" Content="Enter " HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="406,21,0,0" Click="nameButton_Click"/>
+        <Button x:Name="nameButton" Content="Enter " HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="406,21,0,0" Click="NameButton_Click"/>
         <Label x:Name="Player_1" Content="Player 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,131,0,0" FontWeight="Bold"/>
         <Label x:Name="player2Lbl" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,174,0,0"/>
         <Label x:Name="Player_2" Content="Player 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,174,0,0" FontWeight="Bold"/>
-        <TextBox x:Name="name2TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="266,42,0,0" TextChanged="nameTextBox_TextChanged"/>
+        <TextBox x:Name="name2TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="266,42,0,0" TextChanged="NameTextBox_TextChanged"/>
         <Label x:Name="label_Copy" Content="Player 2 name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="169,44,0,0" FontWeight="Bold"/>
 
 

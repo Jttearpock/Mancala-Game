@@ -1972,7 +1972,7 @@ namespace Mancala {
             this.aiCheckBox = ((System.Windows.Controls.CheckBox)(target));
             
             #line 198 "..\..\MainWindow.xaml"
-            this.aiCheckBox.Checked += new System.Windows.RoutedEventHandler(this.aiCheckBox_Checked);
+            this.aiCheckBox.Checked += new System.Windows.RoutedEventHandler(this.AICheckBox_Checked);
             
             #line default
             #line hidden
@@ -1981,7 +1981,7 @@ namespace Mancala {
             this.nameTextBox = ((System.Windows.Controls.TextBox)(target));
             
             #line 199 "..\..\MainWindow.xaml"
-            this.nameTextBox.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.nameTextBox_TextChanged);
+            this.nameTextBox.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.NameTextBox_TextChanged);
             
             #line default
             #line hidden
@@ -1996,7 +1996,7 @@ namespace Mancala {
             this.nameButton = ((System.Windows.Controls.Button)(target));
             
             #line 202 "..\..\MainWindow.xaml"
-            this.nameButton.Click += new System.Windows.RoutedEventHandler(this.nameButton_Click);
+            this.nameButton.Click += new System.Windows.RoutedEventHandler(this.NameButton_Click);
             
             #line default
             #line hidden
@@ -2014,7 +2014,7 @@ namespace Mancala {
             this.name2TextBox = ((System.Windows.Controls.TextBox)(target));
             
             #line 206 "..\..\MainWindow.xaml"
-            this.name2TextBox.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.nameTextBox_TextChanged);
+            this.name2TextBox.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.NameTextBox_TextChanged);
             
             #line default
             #line hidden
