@@ -20,6 +20,27 @@ namespace Mancala
         /// </summary>
         private GameState currentGame = new GameState();
 
+        public void PlayerMethod()
+        {
+            Player playerOne = new Player();
+            Player playerTwo = new Player();
+            Player aiPlayer = new Player();
+            if (!string.IsNullOrWhiteSpace(nameTextBox.Text))
+            {
+                playerOne.Name = nameTextBox.Text.Trim();
+            }
+
+            if (!string.IsNullOrWhiteSpace(name2TextBox.Text))
+            {
+                playerTwo.Name = name2TextBox.Text.Trim();
+            }
+
+            if (aiCheckBox.IsChecked.Equals(true))
+            {
+                aiPlayer.Ai = true;
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class
         /// </summary>
