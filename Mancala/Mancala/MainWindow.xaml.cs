@@ -340,12 +340,14 @@ namespace Mancala
         /// </summary>
         public void UpdateValues()
         {
+
             for (int x = 0; x < 14; x++)
             {
                 string objectName = "txtboxSlot" + x;
                 TextBox currentBox = FindName(objectName) as TextBox;
 
                 currentBox.ToolTip = this.currentGame.ArrGameBoard[x].ToString();
+
 
                 int pieceCount;
                 pieceCount = this.currentGame.ArrGameBoard[x];
@@ -355,8 +357,18 @@ namespace Mancala
                     string imageName = "Image" + x + "_" + count;
                     Image currentImage = FindName(imageName) as Image;
                     currentImage.Visibility = Visibility.Visible;
+
                 }
+                /*
+                for (int index = 9; index >= (index - pieceCount); index--)
+                {
+                    string imageHidden = "Image" + x + "_" + (index);
+                    Image currentHidden = FindName(imageHidden) as Image;
+                    currentHidden.Visibility = Visibility.Hidden;
+                }
+                */
             }
+           
         }
 
         /// <summary>
