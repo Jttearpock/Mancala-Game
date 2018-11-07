@@ -20,27 +20,6 @@ namespace Mancala
         /// </summary>
         private GameState currentGame = new GameState();
 
-        public void PlayerMethod()
-        {
-            Player playerOne = new Player();
-            Player playerTwo = new Player();
-            Player aiPlayer = new Player();
-            if (!string.IsNullOrWhiteSpace(nameTextBox.Text))
-            {
-                playerOne.Name = nameTextBox.Text.Trim();
-            }
-
-            if (!string.IsNullOrWhiteSpace(name2TextBox.Text))
-            {
-                playerTwo.Name = name2TextBox.Text.Trim();
-            }
-
-            if (aiCheckBox.IsChecked.Equals(true))
-            {
-                aiPlayer.Ai = true;
-            }
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class
         /// </summary>
@@ -53,16 +32,16 @@ namespace Mancala
         /// Method that actually takes the turn and changes the values
         /// </summary>
         /// <param name="currentBox">The object that initiated the event.</param>
-        public void TakeMove(TextBox currentBox)
+        public void TakeMove(Border currentBox)
         {
             string startPos;
-            if (currentBox.Name.Length == 12)
+            if (currentBox.Name.Length == 6)
             {
-                startPos = currentBox.Name.Substring(10, 2);
+                startPos = currentBox.Name.Substring(4, 2);
             }
             else
             {
-                startPos = currentBox.Name.Substring(10, 1);
+                startPos = currentBox.Name.Substring(4, 1);
             }
 
             int position = int.Parse(startPos);
@@ -143,16 +122,16 @@ namespace Mancala
         /// Makes sure the current player chose a valid starting position
         /// </summary>
         /// /// <param name="currentBox">The object that initiated the event.</param>
-        public void ConfirmMove(TextBox currentBox)
+        public void ConfirmMove(Border currentBox)
         {
             string startPos;
-            if (currentBox.Name.Length == 12)
+            if (currentBox.Name.Length == 6)
             {
-                startPos = currentBox.Name.Substring(10, 2);
+                startPos = currentBox.Name.Substring(4, 2);
             }
             else
             {
-                startPos = currentBox.Name.Substring(10, 1);
+                startPos = currentBox.Name.Substring(4, 1);
             }
 
             int position = int.Parse(startPos);
@@ -350,8 +329,8 @@ namespace Mancala
         {
             for (int i = 0; i < 14; i++)
             {
-                string boxName = "txtboxSlot" + i;
-                TextBox currentBox = FindName(boxName) as TextBox;
+                string boxName = "slot" + i;
+                Border currentBox = FindName(boxName) as Border;
                 currentBox.IsEnabled = true;
             }
         }
@@ -364,8 +343,8 @@ namespace Mancala
 
             for (int x = 0; x < 14; x++)
             {
-                string objectName = "txtboxSlot" + x;
-                TextBox currentBox = FindName(objectName) as TextBox;
+                string objectName = "slot" + x;
+                Border currentBox = FindName(objectName) as Border;
 
                 currentBox.ToolTip = this.currentGame.ArrGameBoard[x].ToString();
 
@@ -449,16 +428,6 @@ namespace Mancala
         }
 
         /// <summary>
-        /// Click event that begins player move
-        /// </summary>
-        /// <param name="sender">The object that initiated the event.</param>
-        /// <param name="e">The event arguments for the event.</param>
-        private void PlayerTurn_DoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            this.ConfirmMove(sender as TextBox);
-        }
-
-        /// <summary>
         /// Checkbox for choosing to play against AI
         /// </summary>
         /// <param name="sender">The object that initiated the event.</param>
@@ -497,6 +466,51 @@ namespace Mancala
         /// <param name="e">The event arguments for the event.</param>
         private void NameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+        }
+
+        private void slotNum_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.ConfirmMove(sender as Border);
+        }
+
+        private void labSlotVisible_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Border currentBox = sender as Border;
+            string startPos;
+            if (currentBox.Name.Length == 6)
+            {
+                startPos = currentBox.Name.Substring(4, 2);
+            }
+            else
+            {
+                startPos = currentBox.Name.Substring(4, 1);
+            }
+
+            string labelName = "labSlot" + startPos;
+            Label currentLabel = FindName(labelName) as Label;
+            currentLabel.Content = currentBox.ToolTip.ToString();
+            currentLabel.Visibility = Visibility.Visible;
+
+
+        }
+
+        private void labSlotHidden_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Border currentBox = sender as Border;
+            string startPos;
+            if (currentBox.Name.Length == 6)
+            {
+                startPos = currentBox.Name.Substring(4, 2);
+            }
+            else
+            {
+                startPos = currentBox.Name.Substring(4, 1);
+            }
+
+            string labelName = "labSlot" + startPos;
+            Label currentLabel = FindName(labelName) as Label;
+            currentLabel.Content = currentBox.ToolTip.ToString();
+            currentLabel.Visibility = Visibility.Hidden;
         }
     }
 }
