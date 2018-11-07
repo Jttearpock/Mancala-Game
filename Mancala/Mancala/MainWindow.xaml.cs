@@ -4,8 +4,6 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-
-
 namespace Mancala
 {
     using System.Windows;
@@ -77,9 +75,7 @@ namespace Mancala
                 this.currentGame.ChangePlayerTurn();
             }
 
-
-            // TODO Method Call here, needs to run after every move    
-             EndGame();
+            this.EndGame();
         }
 
         /// <summary>
@@ -101,35 +97,31 @@ namespace Mancala
                 sum2 += this.currentGame.ArrGameBoard[x];
             }
 
-            if (sum1.Equals(0))
+            // If game is over
+            if (sum1 == 0 || sum2 == 0)
             {
-                MessageBox.Show("GAME OVER");
-            }
+                this.currentGame.ArrGameBoard[6] += sum1;
+                this.currentGame.ArrGameBoard[13] += sum2;
 
-            if (sum2.Equals(0))
-            {
-                MessageBox.Show("GAME OVER");
-            }
-
-            this.currentGame.ArrGameBoard[6] += sum1;
-            this.currentGame.ArrGameBoard[13] += sum2;
-            // After totaling the scores, all remaining positions should be set to zero: 0-5 & 7-12
-            this.UpdateValues();
-            if (currentGame.ArrGameBoard[6] > currentGame.ArrGameBoard[13])
-            {
-                MessageBox.Show("Player 1 wins!");
-                this.currentGame.OnGoingGame = false;
-            }
-            else if (currentGame.ArrGameBoard[13] > currentGame.ArrGameBoard[6])
-            {
-                MessageBox.Show("Player 2 wins!");
-                this.currentGame.OnGoingGame = false;
+                // After totaling the scores, all remaining positions should be set to zero: 0-5 & 7-12
+                this.UpdateValues();
+                if (this.currentGame.ArrGameBoard[6] > this.currentGame.ArrGameBoard[13])
+                {
+                    MessageBox.Show("Player 1 wins!");
+                    this.currentGame.OnGoingGame = false;
+                }
+                else if (this.currentGame.ArrGameBoard[13] > this.currentGame.ArrGameBoard[6])
+                {
+                    MessageBox.Show("Player 2 wins!");
+                    this.currentGame.OnGoingGame = false;
+                }
             }
         }
 
         /// <summary>
         /// Makes sure the current player chose a valid starting position
         /// </summary>
+        /// /// <param name="currentBox">The object that initiated the event.</param>
         public void ConfirmMove(TextBox currentBox)
         {
             string startPos;
@@ -148,35 +140,35 @@ namespace Mancala
             {
                 if (position >= 0 && position <= 5)
                 {
-                    TakeMove(currentBox);
-
+                    this.TakeMove(currentBox);
                 }
             }
             else if (this.currentGame.PlayerOneTurn == false)
             {
                 if (position >= 7 && position <= 12)
                 {
-                    TakeMove(currentBox);
+                    this.TakeMove(currentBox);
                 }
             }
-
         }
 
         /// <summary>
-        /// Checks the final position & takes appropriate action
+        /// Checks the ending position and takes appropriate action
         /// </summary>
+        /// <param name="position"> The object that initiated the event. </param>
+        /// <returns> True or False. </returns>
         public bool CheckEndingPosition(int position)
         {
-            //If Player One Turn
+            //// If Player One Turn
             if (this.currentGame.PlayerOneTurn == true)
             {
-                // If Ending Position is on Player One's Side
+                //// If Ending Position is on Player One's Side
                 if (position >= 0 && position <= 5)
                 {
-                    // If Ending Position was empty
+                    //// If Ending Position was empty
                     if (this.currentGame.ArrGameBoard[position] == 1)
                     {
-                        // Find Opposite Pit and if not empty, add beads from both pits to Player's Score                       
+                        //// Find Opposite Pit and if not empty, add beads from both pits to Player's Score                       
                         switch (position)
                         {
                             case 0:
@@ -238,24 +230,26 @@ namespace Mancala
                         return false;
                     }
                 }
-                // If ending in Player's Own Store
+
+                //// If ending in Player's Own Store
                 else if (position == 6)
                 {
                     return true;
                 }
 
                 return false;
-            }
-            // If Player Two Turn
+            } 
+
+            //// If Player Two Turn            
             else
             {
-                // If Ending Position is on Player Two's Side
+                //// If Ending Position is on Player Two's Side
                 if (position >= 7 && position <= 12)
                 {
-                    // If Ending Position was empty
+                    //// If Ending Position was empty
                     if (this.currentGame.ArrGameBoard[position] == 1)
                     {
-                        // Find Opposite Pit and if not empty, add beads from both pits to Player's Score                       
+                        //// Find Opposite Pit and if not empty, add beads from both pits to Player's Score                       
                         switch (position)
                         {
                             case 7:
@@ -317,7 +311,8 @@ namespace Mancala
                         return false;
                     }
                 }
-                // If ending in Player's Own Store
+
+                //// If ending in Player's Own Store
                 else if (position == 13)
                 {
                     return true;
@@ -382,14 +377,14 @@ namespace Mancala
                 {
                     this.currentGame.SetStartValues();
                     this.SetBoard();
-                    UpdateValues();
+                    this.UpdateValues();
                 }
             }
             else
             {
                 this.currentGame.SetStartValues();
                 this.SetBoard();
-                UpdateValues();
+                this.UpdateValues();
             }
         }
 
@@ -410,24 +405,35 @@ namespace Mancala
             }
         }
 
+        /// <summary>
+        /// Click event that begins player move
+        /// </summary>
+        /// <param name="sender">The object that initiated the event.</param>
+        /// <param name="e">The event arguments for the event.</param>
         private void PlayerTurn_DoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             this.ConfirmMove(sender as TextBox);
         }
 
-        private void aiCheckBox_Checked(object sender, RoutedEventArgs e)
-        // checkbox for choosing to play against AI
+        /// <summary>
+        /// Checkbox for choosing to play against AI
+        /// </summary>
+        /// <param name="sender">The object that initiated the event.</param>
+        /// <param name="e">The event arguments for the event.</param>
+        private void AICheckBox_Checked(object sender, RoutedEventArgs e) 
         {
             MessageBox.Show("AI is enabled");
             name2TextBox.Clear();
             name2TextBox.IsEnabled = false;
-            player2Lbl.Content = "";
-
-
+            player2Lbl.Content = string.Empty;
         }
 
-        private void nameButton_Click(object sender, RoutedEventArgs e)
-        // Allow player(s) to enter their name(s) 
+        /// <summary>
+        /// Allow player(s) to enter their name(s) 
+        /// </summary>
+        /// <param name="sender">The object that initiated the event.</param>
+        /// <param name="e">The event arguments for the event.</param>
+        private void NameButton_Click(object sender, RoutedEventArgs e)
         {
             player1Lbl.Content = nameTextBox.Text;
 
@@ -441,12 +447,13 @@ namespace Mancala
             }
         }
 
-        private void nameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        /// <summary>
+        /// Unused currently
+        /// </summary>
+        /// <param name="sender">The object that initiated the event.</param>
+        /// <param name="e">The event arguments for the event.</param>
+        private void NameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
     }
 }
-
-
-

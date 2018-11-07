@@ -71,13 +71,16 @@ namespace MyNamespace
             this.OnGoingGame = true;           
         }
 
+        /// <summary>
+        /// Method that changes the current turn
+        /// </summary>
         public void ChangePlayerTurn()
         {
             if (this.PlayerOneTurn == true)
             {
                 this.PlayerOneTurn = false;
             }
-            else
+            else if (this.playerOneTurn == false)
             {
                 this.PlayerOneTurn = true;
             }
