@@ -4,11 +4,12 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System.Windows.Media;
+
 namespace Mancala
 {
     using System.Windows;
     using System.Windows.Controls;
-    using MyNamespace;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -19,6 +20,8 @@ namespace Mancala
         /// Instantiate the currentGame GameState class
         /// </summary>
         private GameState currentGame = new GameState();
+        private Player playerOne;
+        private Player playerTwo;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class
@@ -69,13 +72,12 @@ namespace Mancala
             }
 
             bool extraTurn = this.CheckEndingPosition(position);
-            this.UpdateValues();
             if (extraTurn == false)
             {
                 this.currentGame.ChangePlayerTurn();
             }
-
             this.EndGame();
+            this.UpdateValues();
         }
 
         /// <summary>
@@ -103,16 +105,25 @@ namespace Mancala
                 this.currentGame.ArrGameBoard[6] += sum1;
                 this.currentGame.ArrGameBoard[13] += sum2;
 
-                // After totaling the scores, all remaining positions should be set to zero: 0-5 & 7-12
-                this.UpdateValues();
+                // TODO After totaling the scores, all remaining positions should be set to zero: 0-5 & 7-12
                 if (this.currentGame.ArrGameBoard[6] > this.currentGame.ArrGameBoard[13])
                 {
+                    // TODO Update to display Player Name in winning message
                     MessageBox.Show("Player 1 wins!");
+                    PlayerOneTurnLabel.Content = playerOne.Name + " wins!";
+                    PlayerOneTurnLabel.Foreground = Brushes.Firebrick;
+                    PlayerTwoTurnLabel.Content = playerTwo.Name;
+                    PlayerTwoTurnLabel.Foreground = Brushes.Black;
                     this.currentGame.OnGoingGame = false;
                 }
                 else if (this.currentGame.ArrGameBoard[13] > this.currentGame.ArrGameBoard[6])
                 {
+                    // TODO Update to display Player Name in winning message
                     MessageBox.Show("Player 2 wins!");
+                    PlayerTwoTurnLabel.Content = playerTwo.Name + " wins!";
+                    PlayerTwoTurnLabel.Foreground = Brushes.Firebrick;
+                    PlayerOneTurnLabel.Content = playerOne.Name;
+                    PlayerOneTurnLabel.Foreground = Brushes.Black;
                     this.currentGame.OnGoingGame = false;
                 }
             }
@@ -238,7 +249,7 @@ namespace Mancala
                 }
 
                 return false;
-            } 
+            }
 
             //// If Player Two Turn            
             else
@@ -325,7 +336,7 @@ namespace Mancala
         /// <summary>
         /// Enables game board at start of new game
         /// </summary>
-        public void SetBoard()
+        public void EnableBoard()
         {
             for (int i = 0; i < 14; i++)
             {
@@ -336,39 +347,112 @@ namespace Mancala
         }
 
         /// <summary>
-        /// Method that sets the game board objects to match the array values
+        /// Method that updates labels and values on the board
         /// </summary>
         public void UpdateValues()
         {
-
             for (int x = 0; x < 14; x++)
             {
                 string objectName = "slot" + x;
                 Border currentBox = FindName(objectName) as Border;
 
-                currentBox.ToolTip = this.currentGame.ArrGameBoard[x].ToString();
+                currentBox.Tag = this.currentGame.ArrGameBoard[x].ToString();
+
+                if (x == 6 || x == 13)
+                {
+                    for (int y = 1; y <= 15; y++)
+                    {
+                        string manyImageHidden = "Image" + x + "_" + y;
+                        Image currentManyHidden = FindName(manyImageHidden) as Image;
+                        if (currentManyHidden.Visibility == Visibility.Visible)
+                        {
+                            currentManyHidden.Visibility = Visibility.Hidden;
+
+                        }
+                    }
+                }
+                else
+                {
+                    for (int y = 1; y <= 9; y++)
+                    {
+                        string imageHidden = "Image" + x + "_" + y;
+                        Image currentHidden = FindName(imageHidden) as Image;
+                        currentHidden.Visibility = Visibility.Hidden;
+
+                    }
+                }
 
 
                 int pieceCount;
                 pieceCount = this.currentGame.ArrGameBoard[x];
 
-                for (int count = 1; count <= pieceCount; count++)
+                if (x == 6 || x == 13)
                 {
-                    string imageName = "Image" + x + "_" + count;
-                    Image currentImage = FindName(imageName) as Image;
-                    currentImage.Visibility = Visibility.Visible;
+                    if (pieceCount > 15)
+                    {
+                        pieceCount = 15;
+                    }
+                    for (int count = 1; count <= pieceCount; count++)
+                    {
+                        string imageName = "Image" + x + "_" + count;
+                        Image currentImage = FindName(imageName) as Image;
+                        currentImage.Visibility = Visibility.Visible;
+                    }
+                }
+                else
+                {
+                    if (pieceCount > 9)
+                    {
+                        pieceCount = 9;
+                    }
 
-                }
-                /*
-                for (int index = 9; index >= (index - pieceCount); index--)
-                {
-                    string imageHidden = "Image" + x + "_" + (index);
-                    Image currentHidden = FindName(imageHidden) as Image;
-                    currentHidden.Visibility = Visibility.Hidden;
-                }
-                */
+                    for (int count = 1; count <= pieceCount; count++)
+                    {
+                        string imageName = "Image" + x + "_" + count;
+                        Image currentImage = FindName(imageName) as Image;
+                        currentImage.Visibility = Visibility.Visible;
+                    }
+                }              
             }
-           
+
+            if (this.currentGame.PlayerOneTurn == true)
+            {
+                PlayerOneTurnLabel.Content = playerOne.Name + ", your turn!";
+                PlayerOneTurnLabel.Foreground = Brushes.Firebrick;
+                PlayerTwoTurnLabel.Content = playerTwo.Name;
+                PlayerTwoTurnLabel.Foreground = Brushes.Black;
+            }
+            else
+            {
+                PlayerTwoTurnLabel.Content = playerTwo.Name + ", your turn!";
+                PlayerTwoTurnLabel.Foreground = Brushes.Firebrick;
+                PlayerOneTurnLabel.Content = playerOne.Name;
+                PlayerOneTurnLabel.Foreground = Brushes.Black;
+            }
+
+        }
+
+        /// <summary>
+        /// Sets the values of the two Player classes
+        /// </summary>
+        public void CreatePlayers()
+        {
+            string nameOne = PlayerOneNameTextbox.Text.Trim();
+            string nameTwo = PlayerTwoNameTextbox.Text.Trim();
+            bool? playerOneAi = playerOneAiCheckBox.IsChecked;
+            bool? playerTwoAi = playerTwoAiCheckBox.IsChecked;
+
+            if (string.IsNullOrWhiteSpace(nameOne))
+            {
+                nameOne = "Player One";
+            }
+            if (string.IsNullOrWhiteSpace(nameTwo))
+            {
+                nameTwo = "Player Two";
+            }
+
+            playerOne = new Player(nameOne, playerOneAi);
+            playerTwo = new Player(nameTwo, playerTwoAi);
         }
 
         /// <summary>
@@ -397,15 +481,17 @@ namespace Mancala
             {
                 if (MessageBox.Show("Start new game?", "Confirm", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
                 {
+                    this.CreatePlayers();
                     this.currentGame.SetStartValues();
-                    this.SetBoard();
+                    this.EnableBoard();
                     this.UpdateValues();
                 }
             }
             else
             {
+                this.CreatePlayers();
                 this.currentGame.SetStartValues();
-                this.SetBoard();
+                this.EnableBoard();
                 this.UpdateValues();
             }
         }
@@ -423,57 +509,21 @@ namespace Mancala
                     MessageBoxResult.OK)
                 {
                     this.currentGame.SetStartValues();
+                    this.UpdateValues();
                 }
-            }
-        }
-
-        /// <summary>
-        /// Checkbox for choosing to play against AI
-        /// </summary>
-        /// <param name="sender">The object that initiated the event.</param>
-        /// <param name="e">The event arguments for the event.</param>
-        private void AICheckBox_Checked(object sender, RoutedEventArgs e) 
-        {
-            MessageBox.Show("AI is enabled");
-            name2TextBox.Clear();
-            name2TextBox.IsEnabled = false;
-            player2Lbl.Content = string.Empty;
-        }
-
-        /// <summary>
-        /// Allow player(s) to enter their name(s) 
-        /// </summary>
-        /// <param name="sender">The object that initiated the event.</param>
-        /// <param name="e">The event arguments for the event.</param>
-        private void NameButton_Click(object sender, RoutedEventArgs e)
-        {
-            player1Lbl.Content = nameTextBox.Text;
-
-            if (aiCheckBox.IsChecked.Equals(true))
+            } else if (this.currentGame.OnGoingGame == false)
             {
-                name2TextBox.IsEnabled = false;
+                this.currentGame.SetStartValues();
+                this.UpdateValues();
             }
-            else
-            {
-                player2Lbl.Content = name2TextBox.Text;
-            }
-        }
+        }      
 
-        /// <summary>
-        /// Unused currently
-        /// </summary>
-        /// <param name="sender">The object that initiated the event.</param>
-        /// <param name="e">The event arguments for the event.</param>
-        private void NameTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
-
-        private void slotNum_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void GameBoardPit_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             this.ConfirmMove(sender as Border);
         }
 
-        private void labSlotVisible_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        private void PitValueVisible_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Border currentBox = sender as Border;
             string startPos;
@@ -488,13 +538,13 @@ namespace Mancala
 
             string labelName = "labSlot" + startPos;
             Label currentLabel = FindName(labelName) as Label;
-            currentLabel.Content = currentBox.ToolTip.ToString();
+            currentLabel.Content = currentBox.Tag.ToString();
             currentLabel.Visibility = Visibility.Visible;
 
 
         }
 
-        private void labSlotHidden_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        private void PitValueHidden_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Border currentBox = sender as Border;
             string startPos;
@@ -509,7 +559,6 @@ namespace Mancala
 
             string labelName = "labSlot" + startPos;
             Label currentLabel = FindName(labelName) as Label;
-            currentLabel.Content = currentBox.ToolTip.ToString();
             currentLabel.Visibility = Visibility.Hidden;
         }
     }

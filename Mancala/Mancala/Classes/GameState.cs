@@ -4,7 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace MyNamespace
+namespace Mancala
 {
     /// <summary>
     /// The Class that holds all current game data
