@@ -10,7 +10,6 @@ namespace Mancala
     {
         private string name;
         private bool? isAI;
-        private string[] gameBoard;
         private int[] bestMoveArray;
 
         public Player(string name, bool? isAi)
@@ -20,7 +19,6 @@ namespace Mancala
             {
                 string aiName = "[AI]";
                 this.name = aiName += name;
-                gameBoard = new string[14];
                 bestMoveArray = new int[6];
             }
             else
@@ -41,14 +39,39 @@ namespace Mancala
 
         public int FindBestMove(string[] currentBoard, bool playerOneTurn)
         {
-            gameBoard = currentBoard;
+            
             if (playerOneTurn)
             {
                 for (int i = 0; i < 6; i++)
                 {
-                    if ((i + int.Parse(gameBoard[i])) == 6)
+                    int count = int.Parse(currentBoard[i]);
+                    int endPos = i + count;
+                    if ((i + int.Parse(currentBoard[i])) == 6)
                     {
-                        bestMoveArray[i] = 3;
+                        bestMoveArray[i] = 4;
+                    }
+
+                    else if (endPos == 0 && int.Parse(currentBoard[12-endPos]) != 0)
+                    {
+                        bestMoveArray[i] = 5;
+                    }
+                }
+
+            }
+            else
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    int count = int.Parse(currentBoard[i]);
+                    int endPos = i + count;
+                    if ((i + int.Parse(currentBoard[i])) == 6)
+                    {
+                        bestMoveArray[i] = 4;
+                    }
+
+                    else if (endPos == 0 && int.Parse(currentBoard[12 - endPos]) != 0)
+                    {
+                        bestMoveArray[i] = 5;
                     }
                 }
 
