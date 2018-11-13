@@ -4,6 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System;
 using System.Windows.Media;
 
 namespace Mancala
@@ -480,7 +481,7 @@ namespace Mancala
             {
                 nameTwo = "Player Two";
             }
-
+            
             playerOne = new Player(nameOne, playerOneAi, playerOneDifficulty);
             playerTwo = new Player(nameTwo, playerTwoAi, playerTwoDifficulty);
         }
@@ -496,13 +497,15 @@ namespace Mancala
                 this.TakeAiTurn(playerTwo);
             }
         }
-
+        
         public void TakeAiTurn(Player currentPlayer)
         {
             int position;
-            if (currentPlayer.AiDifficulty == "Easy")
+            // NOTES TO REMEMBER: Instead of AiDifficulty, we 'kinda' change it to Difficulty...
+            if (currentPlayer.Difficulty == "Easy")
             {
                 // TODO Add call to Easy Turn Method here
+                position = currentPlayer.EasyTurn(this.currentGame.ArrGameBoard, this.currentGame.PlayerOneTurn);
             }
             else
             {

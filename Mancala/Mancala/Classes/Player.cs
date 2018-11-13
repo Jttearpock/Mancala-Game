@@ -11,8 +11,9 @@ namespace Mancala
         private string name;
         private bool? isAI;
         private int[] bestMoveArray;
+        private string _difficulty;
 
-        public Player(string name, bool? isAi)
+        public Player(string name, bool? isAi, string difficulty)
         {
             this.isAI = isAi;
             if (isAi ==  true)
@@ -35,6 +36,34 @@ namespace Mancala
         public bool? IsAi
         {
             get { return isAI; }
+        }
+
+        public string Difficulty
+        {
+            get
+            {
+                return _difficulty;
+            }
+            set
+            {
+                _difficulty = value;
+            }
+        }
+
+        public int EasyTurn(string[] currentBoard, bool playerOneTurn)
+        {
+            if (playerOneTurn)
+            {
+                Random randNum = new Random();
+                int rNum = randNum.Next(0, 5);
+                return rNum;
+            }
+            else
+            {
+                Random randNum = new Random();
+                int rNum = randNum.Next(7, 12);
+                return rNum;
+            }            
         }
 
         public int FindBestMove(string[] currentBoard, bool playerOneTurn)
@@ -74,7 +103,6 @@ namespace Mancala
                         bestMoveArray[i] = 5;
                     }
                 }
-
             }
             return 0;
         }
