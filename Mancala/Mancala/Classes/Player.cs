@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mancala
 {
-    class Player
+    public class Player
     {
         private string name;
         private bool? isAI;

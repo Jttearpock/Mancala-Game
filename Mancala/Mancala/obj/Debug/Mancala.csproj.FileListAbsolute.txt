@@ -67,7 +67,6 @@ D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\MainWindow.baml
 D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.g.resources
 D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
 D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
-D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
 H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe.config
 H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.exe
 H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.pdb
@@ -82,3 +81,5 @@ H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Manc
 H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.g.resources
 H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
 H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csprojAssemblyReference.cache
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csproj.CoreCompileInputs.cache

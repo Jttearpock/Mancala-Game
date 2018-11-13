@@ -78,6 +78,10 @@ namespace Mancala
             }
             this.EndGame();
             this.UpdateValues();
+            if (this.currentGame.OnGoingGame == true)
+            {
+                this.IsAiTurn();
+            }
         }
 
         /// <summary>
@@ -147,14 +151,14 @@ namespace Mancala
 
             int position = int.Parse(startPos);
 
-            if (this.currentGame.PlayerOneTurn == true)
+            if (this.currentGame.PlayerOneTurn == true && this.playerOne.IsAi != true)
             {
                 if (position >= 0 && position <= 5)
                 {
                     this.TakeMove(currentBox);
                 }
             }
-            else if (this.currentGame.PlayerOneTurn == false)
+            else if (this.currentGame.PlayerOneTurn == false && this.playerTwo.IsAi != true)
             {
                 if (position >= 7 && position <= 12)
                 {
@@ -412,7 +416,7 @@ namespace Mancala
                         Image currentImage = FindName(imageName) as Image;
                         currentImage.Visibility = Visibility.Visible;
                     }
-                }              
+                }
             }
 
             if (this.currentGame.PlayerOneTurn == true)
@@ -441,6 +445,32 @@ namespace Mancala
             string nameTwo = PlayerTwoNameTextbox.Text.Trim();
             bool? playerOneAi = playerOneAiCheckBox.IsChecked;
             bool? playerTwoAi = playerTwoAiCheckBox.IsChecked;
+            string playerOneDifficulty = null;
+            string playerTwoDifficulty = null;
+
+            if (playerOneAi == true)
+            {
+                if (p1Easy_RB.IsChecked == true)
+                {
+                    playerOneDifficulty = "Easy";
+                }
+                else
+                {
+                    playerOneDifficulty = "Hard";
+                }
+            }
+            if (playerTwoAi == true)
+            {
+                if (p2Easy_RB.IsChecked == true)
+                {
+                    playerTwoDifficulty = "Easy";
+                }
+                else
+                {
+                    playerTwoDifficulty = "Hard";
+                }
+            }
+
 
             if (string.IsNullOrWhiteSpace(nameOne))
             {
@@ -451,8 +481,36 @@ namespace Mancala
                 nameTwo = "Player Two";
             }
 
-            playerOne = new Player(nameOne, playerOneAi);
-            playerTwo = new Player(nameTwo, playerTwoAi);
+            playerOne = new Player(nameOne, playerOneAi, playerOneDifficulty);
+            playerTwo = new Player(nameTwo, playerTwoAi, playerTwoDifficulty);
+        }
+
+        public void IsAiTurn()
+        {
+            if (this.currentGame.PlayerOneTurn == true && this.playerOne.IsAi == true)
+            {
+                this.TakeAiTurn(playerOne);
+            }
+            else if (this.currentGame.PlayerOneTurn == false && this.playerTwo.IsAi == true)
+            {
+                this.TakeAiTurn(playerTwo);
+            }
+        }
+
+        public void TakeAiTurn(Player currentPlayer)
+        {
+            int position;
+            if (currentPlayer.AiDifficulty == "Easy")
+            {
+                // TODO Add call to Easy Turn Method here
+            }
+            else
+            {
+                position = currentPlayer.FindBestMove(this.currentGame.ArrGameBoard, this.currentGame.PlayerOneTurn);
+            }
+            string boxName = "slot" + position;
+            Border currentBox = FindName(boxName) as Border;
+            TakeMove(currentBox);
         }
 
         /// <summary>
@@ -485,6 +543,7 @@ namespace Mancala
                     this.currentGame.SetStartValues();
                     this.EnableBoard();
                     this.UpdateValues();
+                    this.IsAiTurn();
                 }
             }
             else
@@ -493,6 +552,7 @@ namespace Mancala
                 this.currentGame.SetStartValues();
                 this.EnableBoard();
                 this.UpdateValues();
+                this.IsAiTurn();
             }
         }
 
@@ -510,13 +570,16 @@ namespace Mancala
                 {
                     this.currentGame.SetStartValues();
                     this.UpdateValues();
+                    this.IsAiTurn();
                 }
-            } else if (this.currentGame.OnGoingGame == false)
+            }
+            else if (this.currentGame.OnGoingGame == false)
             {
                 this.currentGame.SetStartValues();
                 this.UpdateValues();
+                this.IsAiTurn();
             }
-        }      
+        }
 
         private void GameBoardPit_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
