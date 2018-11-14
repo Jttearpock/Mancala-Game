@@ -109,7 +109,7 @@ namespace Mancala
             int value = 0;
             if (bestMoveArray.Contains(1))
             {
-                for (int x = 0; x < 6; x++)
+                for (int x = 6; x > 0; x--)
                 {
                     if (bestMoveArray[x] == 1)
                     {
@@ -121,7 +121,7 @@ namespace Mancala
             }
             else if (bestMoveArray.Contains(2))
             {
-                for (int x = 0; x < 6; x++)
+                for (int x = 6; x > 0; x--)
                 {
                     if (bestMoveArray[x] == 2)
                     {
@@ -132,7 +132,7 @@ namespace Mancala
             }
             else if (bestMoveArray.Contains(3))
             {
-                for (int x = 0; x < 6; x++)
+                for (int x = 6; x < 0; x--)
                 {
                     if (bestMoveArray[x] == 3)
                     {
@@ -143,7 +143,7 @@ namespace Mancala
             }
             else
             {
-                for (int x = 0; x < 6; x++)
+                for (int x = 6; x < 0; x--)
                 {
                     if (bestMoveArray[x] == 4)
                     {
