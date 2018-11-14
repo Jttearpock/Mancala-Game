@@ -4,12 +4,11 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using System.Windows.Media;
-
 namespace Mancala
 {
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Media;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -20,7 +19,15 @@ namespace Mancala
         /// Instantiate the currentGame GameState class
         /// </summary>
         private GameState currentGame = new GameState();
+
+        /// <summary>
+        /// Instantiate the playerOne Player class
+        /// </summary>
         private Player playerOne;
+
+        /// <summary>
+        /// Instantiate the playerTwo Player  class
+        /// </summary>
         private Player playerTwo;
 
         /// <summary>
@@ -76,6 +83,7 @@ namespace Mancala
             {
                 this.currentGame.ChangePlayerTurn();
             }
+
             this.EndGame();
             this.UpdateValues();
             if (this.currentGame.OnGoingGame == true)
@@ -114,9 +122,9 @@ namespace Mancala
                 {
                     // TODO Update to display Player Name in winning message
                     MessageBox.Show("Player 1 wins!");
-                    PlayerOneTurnLabel.Content = playerOne.Name + " wins!";
+                    PlayerOneTurnLabel.Content = this.playerOne.Name + " wins!";
                     PlayerOneTurnLabel.Foreground = Brushes.Firebrick;
-                    PlayerTwoTurnLabel.Content = playerTwo.Name;
+                    PlayerTwoTurnLabel.Content = this.playerTwo.Name;
                     PlayerTwoTurnLabel.Foreground = Brushes.Black;
                     this.currentGame.OnGoingGame = false;
                 }
@@ -124,9 +132,9 @@ namespace Mancala
                 {
                     // TODO Update to display Player Name in winning message
                     MessageBox.Show("Player 2 wins!");
-                    PlayerTwoTurnLabel.Content = playerTwo.Name + " wins!";
+                    PlayerTwoTurnLabel.Content = this.playerTwo.Name + " wins!";
                     PlayerTwoTurnLabel.Foreground = Brushes.Firebrick;
-                    PlayerOneTurnLabel.Content = playerOne.Name;
+                    PlayerOneTurnLabel.Content = this.playerOne.Name;
                     PlayerOneTurnLabel.Foreground = Brushes.Black;
                     this.currentGame.OnGoingGame = false;
                 }
@@ -150,17 +158,16 @@ namespace Mancala
             }
 
             int position = int.Parse(startPos);
-
             if (this.currentGame.PlayerOneTurn == true && this.playerOne.IsAi != true)
             {
-                if (position >= 0 && position <= 5)
+                if (position >= 0 && position <= 5 && this.currentGame.ArrGameBoard[position] != 0)
                 {
                     this.TakeMove(currentBox);
                 }
             }
             else if (this.currentGame.PlayerOneTurn == false && this.playerTwo.IsAi != true)
             {
-                if (position >= 7 && position <= 12)
+                if (position >= 7 && position <= 12 && this.currentGame.ArrGameBoard[position] != 0)
                 {
                     this.TakeMove(currentBox);
                 }
@@ -371,7 +378,6 @@ namespace Mancala
                         if (currentManyHidden.Visibility == Visibility.Visible)
                         {
                             currentManyHidden.Visibility = Visibility.Hidden;
-
                         }
                     }
                 }
@@ -382,10 +388,8 @@ namespace Mancala
                         string imageHidden = "Image" + x + "_" + y;
                         Image currentHidden = FindName(imageHidden) as Image;
                         currentHidden.Visibility = Visibility.Hidden;
-
                     }
-                }
-
+                }           
 
                 int pieceCount;
                 pieceCount = this.currentGame.ArrGameBoard[x];
@@ -396,6 +400,7 @@ namespace Mancala
                     {
                         pieceCount = 15;
                     }
+
                     for (int count = 1; count <= pieceCount; count++)
                     {
                         string imageName = "Image" + x + "_" + count;
@@ -421,19 +426,18 @@ namespace Mancala
 
             if (this.currentGame.PlayerOneTurn == true)
             {
-                PlayerOneTurnLabel.Content = playerOne.Name + ", your turn!";
+                PlayerOneTurnLabel.Content = this.playerOne.Name + ", your turn!";
                 PlayerOneTurnLabel.Foreground = Brushes.Firebrick;
-                PlayerTwoTurnLabel.Content = playerTwo.Name;
+                PlayerTwoTurnLabel.Content = this.playerTwo.Name;
                 PlayerTwoTurnLabel.Foreground = Brushes.Black;
             }
             else
             {
-                PlayerTwoTurnLabel.Content = playerTwo.Name + ", your turn!";
+                PlayerTwoTurnLabel.Content = this.playerTwo.Name + ", your turn!";
                 PlayerTwoTurnLabel.Foreground = Brushes.Firebrick;
-                PlayerOneTurnLabel.Content = playerOne.Name;
+                PlayerOneTurnLabel.Content = this.playerOne.Name;
                 PlayerOneTurnLabel.Foreground = Brushes.Black;
             }
-
         }
 
         /// <summary>
@@ -459,6 +463,7 @@ namespace Mancala
                     playerOneDifficulty = "Hard";
                 }
             }
+
             if (playerTwoAi == true)
             {
                 if (p2Easy_RB.IsChecked == true)
@@ -471,46 +476,54 @@ namespace Mancala
                 }
             }
 
-
             if (string.IsNullOrWhiteSpace(nameOne))
             {
                 nameOne = "Player One";
             }
+
             if (string.IsNullOrWhiteSpace(nameTwo))
             {
                 nameTwo = "Player Two";
             }
 
-            playerOne = new Player(nameOne, playerOneAi, playerOneDifficulty);
-            playerTwo = new Player(nameTwo, playerTwoAi, playerTwoDifficulty);
+            this.playerOne = new Player(nameOne, playerOneAi, playerOneDifficulty);
+            this.playerTwo = new Player(nameTwo, playerTwoAi, playerTwoDifficulty);
         }
 
+        /// <summary>
+        /// Checks if it's an AI's turn
+        /// </summary>
         public void IsAiTurn()
         {
             if (this.currentGame.PlayerOneTurn == true && this.playerOne.IsAi == true)
             {
-                this.TakeAiTurn(playerOne);
+                this.TakeAiTurn(this.playerOne);
             }
             else if (this.currentGame.PlayerOneTurn == false && this.playerTwo.IsAi == true)
             {
-                this.TakeAiTurn(playerTwo);
+                this.TakeAiTurn(this.playerTwo);
             }
         }
 
+        /// <summary>   
+        /// Determines and triggers the AI move
+        /// </summary>
+        /// <param name="currentPlayer">The current Player</param>
         public void TakeAiTurn(Player currentPlayer)
         {
             int position;
-            if (currentPlayer.AiDifficulty == "Easy")
+            if (currentPlayer.Difficulty == "Easy")
             {
-                // TODO Add call to Easy Turn Method here
+                position = currentPlayer.EasyTurn(this.currentGame.ArrGameBoard, this.currentGame.PlayerOneTurn);
             }
             else
             {
                 position = currentPlayer.FindBestMove(this.currentGame.ArrGameBoard, this.currentGame.PlayerOneTurn);
             }
+
             string boxName = "slot" + position;
             Border currentBox = FindName(boxName) as Border;
-            TakeMove(currentBox);
+            this.TakeMove(currentBox);
         }
 
         /// <summary>
@@ -581,11 +594,21 @@ namespace Mancala
             }
         }
 
+        /// <summary>
+        /// Click event that resets puzzle with confirmation check
+        /// </summary>
+        /// <param name="sender">The object that initiated the event.</param>
+        /// <param name="e">The event arguments for the event.</param>
         private void GameBoardPit_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             this.ConfirmMove(sender as Border);
         }
 
+        /// <summary>
+        /// Click event that resets puzzle with confirmation check
+        /// </summary>
+        /// <param name="sender">The object that initiated the event.</param>
+        /// <param name="e">The event arguments for the event.</param>
         private void PitValueVisible_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Border currentBox = sender as Border;
@@ -603,10 +626,13 @@ namespace Mancala
             Label currentLabel = FindName(labelName) as Label;
             currentLabel.Content = currentBox.Tag.ToString();
             currentLabel.Visibility = Visibility.Visible;
-
-
         }
 
+        /// <summary>
+        /// Click event that resets puzzle with confirmation check
+        /// </summary>
+        /// <param name="sender">The object that initiated the event.</param>
+        /// <param name="e">The event arguments for the event.</param>
         private void PitValueHidden_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Border currentBox = sender as Border;
