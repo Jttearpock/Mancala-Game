@@ -1,0 +1,98 @@
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.exe.config
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.exe
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.pdb
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\App.g.cs
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\MainWindow.baml
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.g.resources
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.cache
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.exe
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.pdb
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe.config
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.exe
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.pdb
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.pdb
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\App.g.cs
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.baml
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.g.resources
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+C:\Users\23211794\Desktop\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe.config
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.exe
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.pdb
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.pdb
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\App.g.cs
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.baml
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.g.resources
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+H:\Visual C#\Part 2\Week 9\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.exe.config
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.exe
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.pdb
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe.config
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.exe
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.pdb
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.pdb
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\App.g.cs
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.baml
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.g.resources
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+H:\Visual C#\Part 2\Week 10\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.exe
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\bin\Debug\Mancala.pdb
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\App.g.cs
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\MainWindow.baml
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.g.resources
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+D:\Sudoku-Game\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe.config
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.exe
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.pdb
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.pdb
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\App.g.cs
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.baml
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.g.resources
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+H:\2018 Fall Class\C# Part 2\Project 2, Mancala\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
+D:\Users\John\Documents\NWTC\Part 2 C#\Mancala-Game\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe.config
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.exe
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.pdb
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.exe
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\bin\Debug\Mancala.pdb
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csprojResolveAssemblyReference.cache
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.g.cs
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\App.g.cs
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.cache
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala_MarkupCompile.lref
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\MainWindow.baml
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.g.resources
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+C:\Users\RPGrinders~\Desktop\Classes\2018\2018 Fall Class\C# Part 2\Mancala-Game-master\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.Cache
