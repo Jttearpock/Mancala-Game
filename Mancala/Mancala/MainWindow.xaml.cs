@@ -550,7 +550,7 @@ namespace Mancala
         {
             if (this.currentGame.OnGoingGame == true)
             {
-                if (MessageBox.Show("Start new game?", "Confirm", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                if (MessageBox.Show("Start new game?", "Confirm", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     this.CreatePlayers();
                     this.currentGame.SetStartValues();
@@ -578,8 +578,8 @@ namespace Mancala
         {
             if (this.currentGame.OnGoingGame == true)
             {
-                if (MessageBox.Show("Restart current puzzle?", "Confirm", MessageBoxButton.OKCancel) ==
-                    MessageBoxResult.OK)
+                if (MessageBox.Show("Start new game with same players?", "Confirm", MessageBoxButton.YesNo) ==
+                    MessageBoxResult.Yes)
                 {
                     this.currentGame.SetStartValues();
                     this.UpdateValues();
@@ -625,6 +625,7 @@ namespace Mancala
             string labelName = "labSlot" + startPos;
             Label currentLabel = FindName(labelName) as Label;
             currentLabel.Content = currentBox.Tag.ToString();
+            currentBox.BorderBrush = Brushes.LightSkyBlue;
             currentLabel.Visibility = Visibility.Visible;
         }
 
@@ -648,7 +649,42 @@ namespace Mancala
 
             string labelName = "labSlot" + startPos;
             Label currentLabel = FindName(labelName) as Label;
+            currentBox.BorderBrush = Brushes.Black;
             currentLabel.Visibility = Visibility.Hidden;
+        }
+
+        private void playerAiCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            // if player one AI's checkbox is unchecked, enable the difficulty levels.
+            if (playerOneAiCheckBox.IsChecked == true)
+            {
+                p1Easy_RB.IsEnabled = true;
+                p1Hard_RB.IsEnabled = true;
+            }
+
+            // if player two AI's checkbox is unchecked, enable the difficulty levels.
+            if (playerTwoAiCheckBox.IsChecked == true)
+            {
+                p2Easy_RB.IsEnabled = true;
+                p2Hard_RB.IsEnabled = true;
+            }
+        }
+
+        private void playerAiCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            // if player one AI's checkbox is checked, enable the difficulty levels.
+            if (playerOneAiCheckBox.IsChecked == false)
+            {
+                p1Easy_RB.IsEnabled = false;
+                p1Hard_RB.IsEnabled = false;
+            }
+
+            // if player two AI's checkbox is checked, enable the difficulty levels.
+            if (playerTwoAiCheckBox.IsChecked == false)
+            {
+                p2Easy_RB.IsEnabled = false;
+                p2Hard_RB.IsEnabled = false;
+            }
         }
     }
 }

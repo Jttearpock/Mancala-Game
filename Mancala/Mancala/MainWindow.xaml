@@ -210,17 +210,17 @@
         <Label x:Name="PlayerTwoTurnLabel" Content="Player Two" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="365,113,0,0" FontWeight="Bold" FontSize="16" Background="#4CFFFFFF" Width="223" HorizontalContentAlignment="Center"/>
         <Label x:Name="PlayerOneTbLbl" Content="Player 1 Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,10,0,0" FontWeight="Bold" d:IsLocked="True"/>
         <Label x:Name="PlayerTwoTbLbl" Content="Player 2 Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="122,42,0,0" FontWeight="Bold" d:IsLocked="True"/>
-        <TextBox x:Name="PlayerOneNameTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="220,12,0,0"/>
-        <TextBox x:Name="PlayerTwoNameTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="220,44,0,0"/>
-        <CheckBox x:Name="playerOneAiCheckBox" Content="AI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,16,0,0" FontWeight="Bold" IsChecked="False" Height="15" Width="42"/>
-        <CheckBox x:Name="playerTwoAiCheckBox" Content="AI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,48,0,0" FontWeight="Bold" IsChecked="False" Height="16" Width="42"/>
+        <TextBox x:Name="PlayerOneNameTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="220,12,0,0" MaxLength="13"/>
+        <TextBox x:Name="PlayerTwoNameTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="220,44,0,0" MaxLength="13"/>
+        <CheckBox x:Name="playerOneAiCheckBox" Content="AI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,16,0,0" FontWeight="Bold" IsChecked="False" Height="15" Width="42" Checked="playerAiCheckBox_Checked" Unchecked="playerAiCheckBox_Unchecked"/>
+        <CheckBox x:Name="playerTwoAiCheckBox" Content="AI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,48,0,0" FontWeight="Bold" IsChecked="False" Height="16" Width="42" Checked="playerAiCheckBox_Checked" Unchecked="playerAiCheckBox_Unchecked"/>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="16" Margin="390,15,0,0" VerticalAlignment="Top" Width="126" Background="{x:Null}">
-            <RadioButton x:Name="p1Easy_RB" Background="{x:Null}" Content="Easy" FontWeight="Bold" IsChecked="True"/>
-            <RadioButton x:Name="p1Hard_RB" Background="{x:Null}" Content="Hard" FontWeight="Bold"/>
+            <RadioButton x:Name="p1Easy_RB" Background="{x:Null}" Content="Easy" FontWeight="Bold" IsChecked="True" IsEnabled="False"/>
+            <RadioButton x:Name="p1Hard_RB" Background="{x:Null}" Content="Hard" FontWeight="Bold" IsEnabled="False"/>
         </Menu>
         <Menu x:Name="menu_Copy" HorizontalAlignment="Left" Height="16" Margin="390,48,0,0" VerticalAlignment="Top" Width="126" Background="{x:Null}">
-            <RadioButton x:Name="p2Easy_RB" Background="{x:Null}" Content="Easy" FontWeight="Bold" IsChecked="True"/>
-            <RadioButton x:Name="p2Hard_RB" Background="{x:Null}" Content="Hard" FontWeight="Bold"/>
+            <RadioButton x:Name="p2Easy_RB" Background="{x:Null}" Content="Easy" FontWeight="Bold" IsChecked="True" IsEnabled="False"/>
+            <RadioButton x:Name="p2Hard_RB" Background="{x:Null}" Content="Hard" FontWeight="Bold" IsEnabled="False"/>
         </Menu>
     </Grid>
 </Window>
