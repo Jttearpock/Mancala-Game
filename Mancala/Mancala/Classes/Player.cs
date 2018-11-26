@@ -43,8 +43,12 @@ namespace Mancala
         public Player(string name, bool? isAi, string difficulty)
         {
             this.isAI = isAi;
+<<<<<<< HEAD
             this.difficulty = difficulty;
             if (isAi == true)
+=======
+            if (isAi ==  true)
+>>>>>>> parent of f9d957a... player class
             {
                 string compName = "[AI]";
                 this.name = compName += name;
@@ -77,6 +81,7 @@ namespace Mancala
         /// </summary>
         public string Difficulty
         {
+<<<<<<< HEAD
             get { return this.difficulty; }
         }
 
@@ -129,6 +134,10 @@ namespace Mancala
         public int FindBestMove(int[] currentBoard, bool? playerOneTurn)
         {
             if (playerOneTurn == true)
+=======
+            
+            if (playerOneTurn)
+>>>>>>> parent of f9d957a... player class
             {
                 for (int i = 0; i < 6; i++)
                 {
@@ -136,6 +145,7 @@ namespace Mancala
                     int endPos = i + count;
                     if (endPos > 12)
                     {
+<<<<<<< HEAD
                         endPos -= 13;
                     }
 
@@ -154,15 +164,24 @@ namespace Mancala
                     else
                     {
                         this.bestMoveArray[i] = 3;
+=======
+                        bestMoveArray[i] = 4;
+                    }
+
+                    else if (endPos == 0 && int.Parse(currentBoard[12-endPos]) != 0)
+                    {
+                        bestMoveArray[i] = 5;
+>>>>>>> parent of f9d957a... player class
                     }
                 }
             }
             else
             {
-                for (int i = 7; i < 13; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     int count = currentBoard[i];
                     int endPos = i + count;
+<<<<<<< HEAD
                     if (endPos > 13)
                     {
                         endPos -= 14;
@@ -188,11 +207,25 @@ namespace Mancala
                     else
                     {
                         this.bestMoveArray[i - 7] = 3;
+=======
+                    if ((i + int.Parse(currentBoard[i])) == 6)
+                    {
+                        bestMoveArray[i] = 4;
+                    }
+
+                    else if (endPos == 0 && int.Parse(currentBoard[12 - endPos]) != 0)
+                    {
+                        bestMoveArray[i] = 5;
+>>>>>>> parent of f9d957a... player class
                     }
                 }
             }
+<<<<<<< HEAD
 
             return this.SelectMove(playerOneTurn);
+=======
+            return 0;
+>>>>>>> parent of f9d957a... player class
         }
 
         /// <summary>
@@ -202,6 +235,7 @@ namespace Mancala
         /// <returns>Int of position to use</returns>
         public int SelectMove(bool? playerOneTurn)
         {
+<<<<<<< HEAD
             // Check the for the best move 
             int value = 0;
             if (this.bestMoveArray.Contains(1))
@@ -248,6 +282,9 @@ namespace Mancala
             {
                 return value + 7;
             }
+=======
+            return 0;
+>>>>>>> parent of f9d957a... player class
         }
     }
 }
