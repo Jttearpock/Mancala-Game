@@ -546,8 +546,8 @@ using System.Threading.Tasks;
         /// <param name="e">The event arguments for the event.</param> 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to quit?", "Confirm", MessageBoxButton.OKCancel) ==
-                MessageBoxResult.OK)
+            if (MessageBox.Show("Are you sure you want to quit?", "Confirm", MessageBoxButton.YesNo) ==
+                MessageBoxResult.Yes)
             {
                 this.Close();
             }
