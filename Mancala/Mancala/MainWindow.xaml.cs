@@ -6,6 +6,8 @@
 
 namespace Mancala
 {
+    using System.Threading;
+using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
@@ -42,7 +44,7 @@ namespace Mancala
         /// Method that actually takes the turn and changes the values
         /// </summary>
         /// <param name="currentBox">The object that initiated the event.</param>
-        public void TakeMove(Border currentBox)
+        public async void TakeMove(Border currentBox)
         {
             string startPos;
             if (currentBox.Name.Length == 6)
@@ -86,6 +88,7 @@ namespace Mancala
 
             this.EndGame();
             this.UpdateValues();
+            await Task.Delay(2000);
             if (this.currentGame.OnGoingGame == true)
             {
                 this.IsAiTurn();
@@ -117,11 +120,18 @@ namespace Mancala
                 this.currentGame.ArrGameBoard[6] += sum1;
                 this.currentGame.ArrGameBoard[13] += sum2;
 
-                // TODO After totaling the scores, all remaining positions should be set to zero: 0-5 & 7-12
+                for (int i = 0; i < 14; i++)
+                {
+                    if (i != 6 && i != 13)
+                    {
+                        this.currentGame.ArrGameBoard[i] = 0;
+                    }
+                }
+
+                this.UpdateValues();
                 if (this.currentGame.ArrGameBoard[6] > this.currentGame.ArrGameBoard[13])
                 {
-                    // TODO Update to display Player Name in winning message
-                    MessageBox.Show("Player 1 wins!");
+                    MessageBox.Show(this.playerOne.Name + " wins!");
                     PlayerOneTurnLabel.Content = this.playerOne.Name + " wins!";
                     PlayerOneTurnLabel.Foreground = Brushes.Firebrick;
                     PlayerTwoTurnLabel.Content = this.playerTwo.Name;
@@ -130,8 +140,7 @@ namespace Mancala
                 }
                 else if (this.currentGame.ArrGameBoard[13] > this.currentGame.ArrGameBoard[6])
                 {
-                    // TODO Update to display Player Name in winning message
-                    MessageBox.Show("Player 2 wins!");
+                    MessageBox.Show(this.playerTwo.Name + " wins!");
                     PlayerTwoTurnLabel.Content = this.playerTwo.Name + " wins!";
                     PlayerTwoTurnLabel.Foreground = Brushes.Firebrick;
                     PlayerOneTurnLabel.Content = this.playerOne.Name;
@@ -389,7 +398,7 @@ namespace Mancala
                         Image currentHidden = FindName(imageHidden) as Image;
                         currentHidden.Visibility = Visibility.Hidden;
                     }
-                }           
+                }
 
                 int pieceCount;
                 pieceCount = this.currentGame.ArrGameBoard[x];
@@ -509,7 +518,7 @@ namespace Mancala
         /// Determines and triggers the AI move
         /// </summary>
         /// <param name="currentPlayer">The current Player</param>
-        public void TakeAiTurn(Player currentPlayer)
+        public async void TakeAiTurn(Player currentPlayer)
         {
             int position;
             if (currentPlayer.Difficulty == "Easy")
@@ -519,11 +528,15 @@ namespace Mancala
             else
             {
                 position = currentPlayer.FindBestMove(this.currentGame.ArrGameBoard, this.currentGame.PlayerOneTurn);
-            }
+            }            
 
             string boxName = "slot" + position;
             Border currentBox = FindName(boxName) as Border;
+            currentBox.BorderBrush = Brushes.LightSkyBlue;
+
+            await Task.Delay(1000);
             this.TakeMove(currentBox);
+            currentBox.BorderBrush = Brushes.Black;
         }
 
         /// <summary>
@@ -546,17 +559,20 @@ namespace Mancala
         /// </summary>
         /// <param name="sender">The object that initiated the event.</param>
         /// <param name="e">The event arguments for the event.</param>
-        private void NewGameButton_Click(object sender, RoutedEventArgs e)
+        private async void NewGameButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.currentGame.OnGoingGame == true)
             {
                 if (MessageBox.Show("Start new game?", "Confirm", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
+                    this.currentGame.OnGoingGame = false;
+                    await Task.Delay(1500);
                     this.CreatePlayers();
                     this.currentGame.SetStartValues();
                     this.EnableBoard();
                     this.UpdateValues();
-                    this.IsAiTurn();
+                    await Task.Delay(1000);
+                    this.IsAiTurn();  
                 }
             }
             else
@@ -565,6 +581,7 @@ namespace Mancala
                 this.currentGame.SetStartValues();
                 this.EnableBoard();
                 this.UpdateValues();
+                await Task.Delay(1000);
                 this.IsAiTurn();
             }
         }
@@ -574,15 +591,18 @@ namespace Mancala
         /// </summary>
         /// <param name="sender">The object that initiated the event.</param>
         /// <param name="e">The event arguments for the event.</param>
-        private void RestartButton_Click(object sender, RoutedEventArgs e)
+        private async void RestartButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.currentGame.OnGoingGame == true)
             {
                 if (MessageBox.Show("Start new game with same players?", "Confirm", MessageBoxButton.YesNo) ==
                     MessageBoxResult.Yes)
                 {
+                    this.currentGame.OnGoingGame = false;
+                    await Task.Delay(1500);
                     this.currentGame.SetStartValues();
                     this.UpdateValues();
+                    await Task.Delay(1000);
                     this.IsAiTurn();
                 }
             }
@@ -590,6 +610,7 @@ namespace Mancala
             {
                 this.currentGame.SetStartValues();
                 this.UpdateValues();
+                await Task.Delay(1000);
                 this.IsAiTurn();
             }
         }
@@ -605,7 +626,7 @@ namespace Mancala
         }
 
         /// <summary>
-        /// Click event that resets puzzle with confirmation check
+        /// Displays bead count on mouse enter
         /// </summary>
         /// <param name="sender">The object that initiated the event.</param>
         /// <param name="e">The event arguments for the event.</param>
@@ -630,7 +651,7 @@ namespace Mancala
         }
 
         /// <summary>
-        /// Click event that resets puzzle with confirmation check
+        /// Heads bead count display on mouse leave
         /// </summary>
         /// <param name="sender">The object that initiated the event.</param>
         /// <param name="e">The event arguments for the event.</param>
@@ -653,37 +674,43 @@ namespace Mancala
             currentLabel.Visibility = Visibility.Hidden;
         }
 
-        private void playerAiCheckBox_Checked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// On checkbox check enable appropriate menu
+        /// </summary>
+        /// <param name="sender">The object that initiated the event.</param>
+        /// <param name="e">The event arguments for the event.</param>
+        private void PlayerAiCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             // if player one AI's checkbox is unchecked, enable the difficulty levels.
             if (playerOneAiCheckBox.IsChecked == true)
             {
-                p1Easy_RB.IsEnabled = true;
-                p1Hard_RB.IsEnabled = true;
+                playerOneAiMenu.IsEnabled = true;
             }
 
             // if player two AI's checkbox is unchecked, enable the difficulty levels.
             if (playerTwoAiCheckBox.IsChecked == true)
             {
-                p2Easy_RB.IsEnabled = true;
-                p2Hard_RB.IsEnabled = true;
+                playerTwoAiMenu.IsEnabled = true;
             }
         }
 
-        private void playerAiCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// On checkbox uncheck disable appropriate menu
+        /// </summary>
+        /// <param name="sender">The object that initiated the event.</param>
+        /// <param name="e">The event arguments for the event.</param>
+        private void PlayerAiCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            // if player one AI's checkbox is checked, enable the difficulty levels.
+            // if player one AI's checkbox is checked, disable the difficulty levels.
             if (playerOneAiCheckBox.IsChecked == false)
             {
-                p1Easy_RB.IsEnabled = false;
-                p1Hard_RB.IsEnabled = false;
+                playerOneAiMenu.IsEnabled = false;
             }
 
-            // if player two AI's checkbox is checked, enable the difficulty levels.
+            // if player two AI's checkbox is checked, disable the difficulty levels.
             if (playerTwoAiCheckBox.IsChecked == false)
             {
-                p2Easy_RB.IsEnabled = false;
-                p2Hard_RB.IsEnabled = false;
+                playerTwoAiMenu.IsEnabled = false;
             }
         }
     }
