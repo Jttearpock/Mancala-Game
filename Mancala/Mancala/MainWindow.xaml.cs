@@ -4,13 +4,12 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System.Windows.Media;
+
 namespace Mancala
 {
-    using System.Threading;
-using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Media;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -21,15 +20,7 @@ using System.Threading.Tasks;
         /// Instantiate the currentGame GameState class
         /// </summary>
         private GameState currentGame = new GameState();
-
-        /// <summary>
-        /// Instantiate the playerOne Player class
-        /// </summary>
         private Player playerOne;
-
-        /// <summary>
-        /// Instantiate the playerTwo Player  class
-        /// </summary>
         private Player playerTwo;
 
         /// <summary>
@@ -44,7 +35,7 @@ using System.Threading.Tasks;
         /// Method that actually takes the turn and changes the values
         /// </summary>
         /// <param name="currentBox">The object that initiated the event.</param>
-        public async void TakeMove(Border currentBox)
+        public void TakeMove(Border currentBox)
         {
             string startPos;
             if (currentBox.Name.Length == 6)
@@ -85,10 +76,8 @@ using System.Threading.Tasks;
             {
                 this.currentGame.ChangePlayerTurn();
             }
-
             this.EndGame();
             this.UpdateValues();
-            await Task.Delay(2000);
             if (this.currentGame.OnGoingGame == true)
             {
                 this.IsAiTurn();
@@ -120,30 +109,24 @@ using System.Threading.Tasks;
                 this.currentGame.ArrGameBoard[6] += sum1;
                 this.currentGame.ArrGameBoard[13] += sum2;
 
-                for (int i = 0; i < 14; i++)
-                {
-                    if (i != 6 && i != 13)
-                    {
-                        this.currentGame.ArrGameBoard[i] = 0;
-                    }
-                }
-
-                this.UpdateValues();
+                // TODO After totaling the scores, all remaining positions should be set to zero: 0-5 & 7-12
                 if (this.currentGame.ArrGameBoard[6] > this.currentGame.ArrGameBoard[13])
                 {
-                    MessageBox.Show(this.playerOne.Name + " wins!");
-                    PlayerOneTurnLabel.Content = this.playerOne.Name + " wins!";
+                    // TODO Update to display Player Name in winning message
+                    MessageBox.Show("Player 1 wins!");
+                    PlayerOneTurnLabel.Content = playerOne.Name + " wins!";
                     PlayerOneTurnLabel.Foreground = Brushes.Firebrick;
-                    PlayerTwoTurnLabel.Content = this.playerTwo.Name;
+                    PlayerTwoTurnLabel.Content = playerTwo.Name;
                     PlayerTwoTurnLabel.Foreground = Brushes.Black;
                     this.currentGame.OnGoingGame = false;
                 }
                 else if (this.currentGame.ArrGameBoard[13] > this.currentGame.ArrGameBoard[6])
                 {
-                    MessageBox.Show(this.playerTwo.Name + " wins!");
-                    PlayerTwoTurnLabel.Content = this.playerTwo.Name + " wins!";
+                    // TODO Update to display Player Name in winning message
+                    MessageBox.Show("Player 2 wins!");
+                    PlayerTwoTurnLabel.Content = playerTwo.Name + " wins!";
                     PlayerTwoTurnLabel.Foreground = Brushes.Firebrick;
-                    PlayerOneTurnLabel.Content = this.playerOne.Name;
+                    PlayerOneTurnLabel.Content = playerOne.Name;
                     PlayerOneTurnLabel.Foreground = Brushes.Black;
                     this.currentGame.OnGoingGame = false;
                 }
@@ -167,16 +150,17 @@ using System.Threading.Tasks;
             }
 
             int position = int.Parse(startPos);
+
             if (this.currentGame.PlayerOneTurn == true && this.playerOne.IsAi != true)
             {
-                if (position >= 0 && position <= 5 && this.currentGame.ArrGameBoard[position] != 0)
+                if (position >= 0 && position <= 5)
                 {
                     this.TakeMove(currentBox);
                 }
             }
             else if (this.currentGame.PlayerOneTurn == false && this.playerTwo.IsAi != true)
             {
-                if (position >= 7 && position <= 12 && this.currentGame.ArrGameBoard[position] != 0)
+                if (position >= 7 && position <= 12)
                 {
                     this.TakeMove(currentBox);
                 }
@@ -387,6 +371,7 @@ using System.Threading.Tasks;
                         if (currentManyHidden.Visibility == Visibility.Visible)
                         {
                             currentManyHidden.Visibility = Visibility.Hidden;
+
                         }
                     }
                 }
@@ -397,8 +382,10 @@ using System.Threading.Tasks;
                         string imageHidden = "Image" + x + "_" + y;
                         Image currentHidden = FindName(imageHidden) as Image;
                         currentHidden.Visibility = Visibility.Hidden;
+
                     }
                 }
+
 
                 int pieceCount;
                 pieceCount = this.currentGame.ArrGameBoard[x];
@@ -409,7 +396,6 @@ using System.Threading.Tasks;
                     {
                         pieceCount = 15;
                     }
-
                     for (int count = 1; count <= pieceCount; count++)
                     {
                         string imageName = "Image" + x + "_" + count;
@@ -435,18 +421,19 @@ using System.Threading.Tasks;
 
             if (this.currentGame.PlayerOneTurn == true)
             {
-                PlayerOneTurnLabel.Content = this.playerOne.Name + ", your turn!";
+                PlayerOneTurnLabel.Content = playerOne.Name + ", your turn!";
                 PlayerOneTurnLabel.Foreground = Brushes.Firebrick;
-                PlayerTwoTurnLabel.Content = this.playerTwo.Name;
+                PlayerTwoTurnLabel.Content = playerTwo.Name;
                 PlayerTwoTurnLabel.Foreground = Brushes.Black;
             }
             else
             {
-                PlayerTwoTurnLabel.Content = this.playerTwo.Name + ", your turn!";
+                PlayerTwoTurnLabel.Content = playerTwo.Name + ", your turn!";
                 PlayerTwoTurnLabel.Foreground = Brushes.Firebrick;
-                PlayerOneTurnLabel.Content = this.playerOne.Name;
+                PlayerOneTurnLabel.Content = playerOne.Name;
                 PlayerOneTurnLabel.Foreground = Brushes.Black;
             }
+
         }
 
         /// <summary>
@@ -472,7 +459,6 @@ using System.Threading.Tasks;
                     playerOneDifficulty = "Hard";
                 }
             }
-
             if (playerTwoAi == true)
             {
                 if (p2Easy_RB.IsChecked == true)
@@ -485,58 +471,46 @@ using System.Threading.Tasks;
                 }
             }
 
+
             if (string.IsNullOrWhiteSpace(nameOne))
             {
                 nameOne = "Player One";
             }
-
             if (string.IsNullOrWhiteSpace(nameTwo))
             {
                 nameTwo = "Player Two";
             }
 
-            this.playerOne = new Player(nameOne, playerOneAi, playerOneDifficulty);
-            this.playerTwo = new Player(nameTwo, playerTwoAi, playerTwoDifficulty);
+            playerOne = new Player(nameOne, playerOneAi, playerOneDifficulty);
+            playerTwo = new Player(nameTwo, playerTwoAi, playerTwoDifficulty);
         }
 
-        /// <summary>
-        /// Checks if it's an AI's turn
-        /// </summary>
         public void IsAiTurn()
         {
             if (this.currentGame.PlayerOneTurn == true && this.playerOne.IsAi == true)
             {
-                this.TakeAiTurn(this.playerOne);
+                this.TakeAiTurn(playerOne);
             }
             else if (this.currentGame.PlayerOneTurn == false && this.playerTwo.IsAi == true)
             {
-                this.TakeAiTurn(this.playerTwo);
+                this.TakeAiTurn(playerTwo);
             }
         }
 
-        /// <summary>   
-        /// Determines and triggers the AI move
-        /// </summary>
-        /// <param name="currentPlayer">The current Player</param>
-        public async void TakeAiTurn(Player currentPlayer)
+        public void TakeAiTurn(Player currentPlayer)
         {
             int position;
-            if (currentPlayer.Difficulty == "Easy")
+            if (currentPlayer.AiDifficulty == "Easy")
             {
-                position = currentPlayer.EasyTurn(this.currentGame.ArrGameBoard, this.currentGame.PlayerOneTurn);
+                // TODO Add call to Easy Turn Method here
             }
             else
             {
                 position = currentPlayer.FindBestMove(this.currentGame.ArrGameBoard, this.currentGame.PlayerOneTurn);
-            }            
-
+            }
             string boxName = "slot" + position;
             Border currentBox = FindName(boxName) as Border;
-            currentBox.BorderBrush = Brushes.LightSkyBlue;
-
-            await Task.Delay(1000);
-            this.TakeMove(currentBox);
-            currentBox.BorderBrush = Brushes.Black;
+            TakeMove(currentBox);
         }
 
         /// <summary>
@@ -546,8 +520,8 @@ using System.Threading.Tasks;
         /// <param name="e">The event arguments for the event.</param> 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to quit?", "Confirm", MessageBoxButton.YesNo) ==
-                MessageBoxResult.Yes)
+            if (MessageBox.Show("Are you sure you want to quit?", "Confirm", MessageBoxButton.OKCancel) ==
+                MessageBoxResult.OK)
             {
                 this.Close();
             }
@@ -559,20 +533,17 @@ using System.Threading.Tasks;
         /// </summary>
         /// <param name="sender">The object that initiated the event.</param>
         /// <param name="e">The event arguments for the event.</param>
-        private async void NewGameButton_Click(object sender, RoutedEventArgs e)
+        private void NewGameButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.currentGame.OnGoingGame == true)
             {
-                if (MessageBox.Show("Start new game?", "Confirm", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Start new game?", "Confirm", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
                 {
-                    this.currentGame.OnGoingGame = false;
-                    await Task.Delay(1500);
                     this.CreatePlayers();
                     this.currentGame.SetStartValues();
                     this.EnableBoard();
                     this.UpdateValues();
-                    await Task.Delay(1000);
-                    this.IsAiTurn();  
+                    this.IsAiTurn();
                 }
             }
             else
@@ -581,7 +552,6 @@ using System.Threading.Tasks;
                 this.currentGame.SetStartValues();
                 this.EnableBoard();
                 this.UpdateValues();
-                await Task.Delay(1000);
                 this.IsAiTurn();
             }
         }
@@ -591,18 +561,15 @@ using System.Threading.Tasks;
         /// </summary>
         /// <param name="sender">The object that initiated the event.</param>
         /// <param name="e">The event arguments for the event.</param>
-        private async void RestartButton_Click(object sender, RoutedEventArgs e)
+        private void RestartButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.currentGame.OnGoingGame == true)
             {
-                if (MessageBox.Show("Start new game with same players?", "Confirm", MessageBoxButton.YesNo) ==
-                    MessageBoxResult.Yes)
+                if (MessageBox.Show("Restart current puzzle?", "Confirm", MessageBoxButton.OKCancel) ==
+                    MessageBoxResult.OK)
                 {
-                    this.currentGame.OnGoingGame = false;
-                    await Task.Delay(1500);
                     this.currentGame.SetStartValues();
                     this.UpdateValues();
-                    await Task.Delay(1000);
                     this.IsAiTurn();
                 }
             }
@@ -610,26 +577,15 @@ using System.Threading.Tasks;
             {
                 this.currentGame.SetStartValues();
                 this.UpdateValues();
-                await Task.Delay(1000);
                 this.IsAiTurn();
             }
         }
 
-        /// <summary>
-        /// Click event that resets puzzle with confirmation check
-        /// </summary>
-        /// <param name="sender">The object that initiated the event.</param>
-        /// <param name="e">The event arguments for the event.</param>
         private void GameBoardPit_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             this.ConfirmMove(sender as Border);
         }
 
-        /// <summary>
-        /// Displays bead count on mouse enter
-        /// </summary>
-        /// <param name="sender">The object that initiated the event.</param>
-        /// <param name="e">The event arguments for the event.</param>
         private void PitValueVisible_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Border currentBox = sender as Border;
@@ -646,15 +602,11 @@ using System.Threading.Tasks;
             string labelName = "labSlot" + startPos;
             Label currentLabel = FindName(labelName) as Label;
             currentLabel.Content = currentBox.Tag.ToString();
-            currentBox.BorderBrush = Brushes.LightSkyBlue;
             currentLabel.Visibility = Visibility.Visible;
+
+
         }
 
-        /// <summary>
-        /// Heads bead count display on mouse leave
-        /// </summary>
-        /// <param name="sender">The object that initiated the event.</param>
-        /// <param name="e">The event arguments for the event.</param>
         private void PitValueHidden_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Border currentBox = sender as Border;
@@ -670,48 +622,7 @@ using System.Threading.Tasks;
 
             string labelName = "labSlot" + startPos;
             Label currentLabel = FindName(labelName) as Label;
-            currentBox.BorderBrush = Brushes.Black;
             currentLabel.Visibility = Visibility.Hidden;
-        }
-
-        /// <summary>
-        /// On checkbox check enable appropriate menu
-        /// </summary>
-        /// <param name="sender">The object that initiated the event.</param>
-        /// <param name="e">The event arguments for the event.</param>
-        private void PlayerAiCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            // if player one AI's checkbox is unchecked, enable the difficulty levels.
-            if (playerOneAiCheckBox.IsChecked == true)
-            {
-                playerOneAiMenu.IsEnabled = true;
-            }
-
-            // if player two AI's checkbox is unchecked, enable the difficulty levels.
-            if (playerTwoAiCheckBox.IsChecked == true)
-            {
-                playerTwoAiMenu.IsEnabled = true;
-            }
-        }
-
-        /// <summary>
-        /// On checkbox uncheck disable appropriate menu
-        /// </summary>
-        /// <param name="sender">The object that initiated the event.</param>
-        /// <param name="e">The event arguments for the event.</param>
-        private void PlayerAiCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            // if player one AI's checkbox is checked, disable the difficulty levels.
-            if (playerOneAiCheckBox.IsChecked == false)
-            {
-                playerOneAiMenu.IsEnabled = false;
-            }
-
-            // if player two AI's checkbox is checked, disable the difficulty levels.
-            if (playerTwoAiCheckBox.IsChecked == false)
-            {
-                playerTwoAiMenu.IsEnabled = false;
-            }
         }
     }
 }
